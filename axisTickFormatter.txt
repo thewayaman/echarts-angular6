@@ -7,3 +7,17 @@ formatter:  (param) => {
                     'min: ' + param.data[1]
                 ].join('<br/>');
             }
+
+
+formatter:  (value) => {
+            const len = String(value).replace('.', '').length;
+            if (len >= 5 && len <= 6) {
+              return '{value|' + value / 1000 + 'K' + '}';
+            } else if (len > 6 && len <= 9) {
+              return '{value|' + value / 1000000 + 'M' + '}';
+            } else if (len > 9) {
+              return '{value|' + value / 1000000000 + 'B' + '}';
+            } else {
+              return '{value|' + value + '}';
+            }
+          },
