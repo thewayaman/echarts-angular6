@@ -1,0 +1,9 @@
+formatter:  (param) => {
+                return [
+                    'max: ' + param.data[5],
+                    'Q3: ' + param.data[4],
+                    'median: ' + param.data[3],
+                    'Q1: ' + param.data[2],
+                    'min: ' + param.data[1]
+                ].join('<br/>');
+            }
